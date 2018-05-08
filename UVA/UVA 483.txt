@@ -1,0 +1,92 @@
+#include <iomanip>
+
+#include <algorithm>
+
+#include <cmath>
+
+#include <iostream>
+
+using namespace std ;
+
+void fast()
+{
+
+  std :: ios_base :: sync_with_stdio (0);
+
+  cin.tie(0);
+
+  cout.tie(0);
+
+}
+
+
+int main ()
+
+{
+
+ fast();
+
+ string s,arr[100000],m;
+
+ int n,c=0,x=0,y=0,a=0,b=0,d=0;
+ 
+
+ while(getline(cin,s))
+
+ {
+   
+     c=0;
+
+     a=0;
+  
+     m="";
+      
+     
+      for(int j=0; j<s.size();j++)
+  
+    {
+        
+   
+       if(s[j]!=' ')
+      
+           {
+ 
+            m+=s[j];
+  
+             a=1;
+  
+  
+          }
+
+         else if(a==1)
+     
+           {
+     
+             reverse(m.begin(),m.end());
+          
+                cout<<m<<" ";       
+         
+                 arr[c++]=m;
+         
+                    m="";
+        
+                    a=0;
+    
+            }
+          
+     
+
+      }
+      
+   reverse(m.begin(),m.end());
+   
+   cout<<m<<endl;
+ 
+ }
+ 
+  
+  
+ return 0;
+
+}
+ 
