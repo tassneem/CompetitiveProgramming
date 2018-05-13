@@ -1,0 +1,65 @@
+#include <iomanip>
+#include <algorithm>
+#include <cmath>
+#include <iostream>
+#include <string>
+using namespace std ;
+void fast(){
+  std :: ios_base :: sync_with_stdio (0);
+  cin.tie(0);
+  cout.tie(0);
+}
+
+int main ()
+{
+ fast();
+ string s,arr[100000],m;
+ int n,c=0;
+ 
+ while(cin>>s)
+ {
+      if(s=="")
+         continue;
+     
+      transform(s.begin(), s.end(), s.begin(), ::tolower);
+     
+     
+    for(int i=0; i<s.size();i++)
+     {
+        
+        if(s[i]>='a'&&s[i]<='z')
+         m+=s[i]; 
+     else
+     
+     
+    { 
+    if (m != "")
+    {
+      
+      arr[c++]=m; 
+     m="";
+    }
+     }
+     
+     
+     }
+    if (m !="")
+    {
+    arr[c++]=m;
+    m="" ;
+    }
+   
+ }
+ sort(arr,arr+c);
+     for(int i=0 ;i<c;i++)
+     {
+         if(arr[i]==arr[i+1])
+         continue;
+         else
+     cout<<arr[i]<<endl;
+     }
+ 
+  
+  return 0;
+}
+ 
